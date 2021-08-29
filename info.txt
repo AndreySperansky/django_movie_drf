@@ -1,0 +1,6 @@
+Создание и настройка проекта
+https://www.youtube.com/watch?v=iVaqAvlEUbw&list=PLF-NY6ldwAWqSxUpnTBObEP21cFQxNJ7C&index=2
+
+Serializers & APIView django restframework
+https://www.youtube.com/watch?v=VhWwLLpBuIE&list=PLF-NY6ldwAWqSxUpnTBObEP21cFQxNJ7C&index=4
+

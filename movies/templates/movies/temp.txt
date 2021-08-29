@@ -1,0 +1,47 @@
+стр. 276 movies.html
+
+1 вариант
+                <a href="/{% url 'movie_detail' movie.url %}/" class="editContent" >{{ movie.title }}</a>
+
+2 вариант
+                <a href="/{{ movie.url }}/" class="editContent" >{{ movie.title }}</a>
+
+3 вариант  get_absolute_url функция из models
+
+                <a href="/{{ movie.get_absolute_url }}/" class="editContent" >{{ movie.title }}</a>
+
+
+***********************************************************************************************************
+views.py
+
+class MoviesView(ListView):
+    """Список фильмов git_version"""
+    model = Movie
+    queryset = Movie.objects.filter(draft=False)
+    template = "movies/movies.html"
+
+************************************************************************************************************
+base.html
+
+{% block title %}
+{% endblock title %}
+
+
+{% block content %}
+    <section class="ab-info-main py-md-5 py-4 editContent"
+             style="padding-left: 3rem; padding-right: 3rem;">
+        {% block container %}
+            <div class="container-fluid py-md-3">
+        {% endblock container %}
+        <div class="row">
+            {% block sidebar %}
+                <div class="side-bar col-lg-3">
+            {% endblock sidebar %}
+            {% include 'include/sidebar.html' %}
+            </div>
+            {% block movie %}
+            {% endblock movie %}
+        </div>
+        </div>
+    </section>
+{% endblock content %}

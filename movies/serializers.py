@@ -34,6 +34,20 @@ class ReviewSerializer(serializers.ModelSerializer):
         fields = ('name', 'text', 'children')
 
 
+class ActorListSerializer(serializers.ModelSerializer):
+    '''Вывод списка актеров и режиссеров'''
+    class Meta:
+        model = Actor
+        fields = ("id", "name", "image")
+
+
+class ActorDetailSerializer(serializers.ModelSerializer):
+    '''Вывод полного описания актеров и режиссеров'''
+    class Meta:
+        model = Actor
+        fields = "__all__"
+
+
 
 class MovieListSerializer(serializers.ModelSerializer):
     '''Список фильмов'''
@@ -49,8 +63,10 @@ class MovieDetailSerializer(serializers.ModelSerializer):
     '''Детали фильма'''
 
     category = serializers.SlugRelatedField(slug_field='name', read_only=True)
-    directors = serializers.SlugRelatedField(slug_field='name', read_only=True, many=True)
-    actors = serializers.SlugRelatedField(slug_field='name', read_only=True, many=True)
+    # directors = serializers.SlugRelatedField(slug_field='name', read_only=True, many=True)
+    directors = ActorDetailSerializer(read_only=True, many=True)
+    # actors = serializers.SlugRelatedField(slug_field='name', read_only=True, many=True)
+    actors = ActorDetailSerializer(read_only=True, many=True)
     genres = serializers.SlugRelatedField(slug_field='name', read_only=True, many=True)
     reviews = ReviewSerializer(many=True)
 

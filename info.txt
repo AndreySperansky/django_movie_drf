@@ -4,3 +4,7 @@ https://www.youtube.com/watch?v=iVaqAvlEUbw&list=PLF-NY6ldwAWqSxUpnTBObEP21cFQxN
 Serializers & APIView django restframework
 https://www.youtube.com/watch?v=VhWwLLpBuIE&list=PLF-NY6ldwAWqSxUpnTBObEP21cFQxNJ7C&index=4
 
+django-filter фильтрация фильмов по годам и жанрам
+https://www.youtube.com/watch?v=0Pn-gzcVBAA&list=PLF-NY6ldwAWqSxUpnTBObEP21cFQxNJ7C&index=11
+
+

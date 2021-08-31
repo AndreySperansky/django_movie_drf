@@ -36,6 +36,10 @@ INSTALLED_APPS = [
     'django_filters',
     'djoser',
 
+    'oauth2_provider',
+    'social_django',
+    'rest_framework_social_oauth2',
+
 
     'movies',
 ]
@@ -202,10 +206,24 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-#
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7363441'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'tGZ3sAGJeEA46Odcmb6N'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.vk.VKOAuth2',
+    'rest_framework_social_oauth2.backends.DjangoOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
+
+
+# Внимание, кортеж обязательно должен быть итерируем, (запятая после каждого элемента - compulsory)
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_FILTER_BACKENDS': (

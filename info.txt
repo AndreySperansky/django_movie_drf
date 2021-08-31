@@ -1,3 +1,10 @@
+admin admin
+Alex 24alex70in
+Vlad 24vlad70in
+Denis 24denis70in
+
+
+
 Создание и настройка проекта
 https://www.youtube.com/watch?v=iVaqAvlEUbw&list=PLF-NY6ldwAWqSxUpnTBObEP21cFQxNJ7C&index=2
 
